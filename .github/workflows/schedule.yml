@@ -11,8 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: yarn install
       - name: Update gist
-        uses: leecason/netease-music-box@master
+        uses: ./
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GIST_ID: b51bc9844585c33775edc27bb38ad2ab
