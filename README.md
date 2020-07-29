@@ -1,11 +1,12 @@
 <p align="center">
+  <img src="https://github.com/Leecason/netease-music-box/blob/master/preview.png" width="550">
   <h2 align="center">Netease Music Box</h2>
   <p align="center">更新最近一周网易云音乐的听歌排行数据到 Gist</p>
 </p>
 
-## 使用
+## ✨使用
 
-### 准备
+### 🎒准备
 
 1. 创建一个新的 public Github Gist（https://gist.github.com/）
 
@@ -19,7 +20,7 @@ ID 为个人主页页面（`https://music.163.com/#/user/home?id=xxx`），`id` 
 
 在登录态下打开浏览器开发者工具，查看 Cookie，获取 `key` 为 `MUSIC_U` 的 `value`
 
-### 设置
+### 🖥设置
 
 1. Fork 这个项目
 
