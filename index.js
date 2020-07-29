@@ -1,11 +1,7 @@
-import { config } from 'dotenv';
-import { Octokit } from '@octokit/rest';
-import eaw from 'eastasianwidth';
-import { user_record } from 'NeteaseCloudMusicApi';
-import generateBarChart from './generateBarChart';
-import truncateString from './truncateString';
-
-config();
+require('dotenv').config();
+const Octokit = require("@octokit/rest");
+const eaw = require('eastasianwidth');
+const { user_record } = require('NeteaseCloudMusicApi');
 
 const {
   GIST_ID: gistId,
@@ -13,6 +9,33 @@ const {
   USER_ID: userId,
   USER_TOKEN: userToken,
 } = process.env;
+
+function generateBarChart (percent, size) {
+  const syms = '░▏▎▍▌▋▊▉█';
+
+  const frac = Math.floor((size * 8 * percent) / 100);
+  const barsFull = Math.floor(frac / 8);
+  if (barsFull >= size) {
+    return syms.substring(8, 9).repeat(size);
+  }
+  const semi = frac % 8;
+
+  return [
+    syms.substring(8, 9).repeat(barsFull),
+    syms.substring(semi, semi + 1),
+  ].join("").padEnd(size, syms.substring(0, 1));
+}
+
+function truncateString(str, num, suf) {
+  let suffix = '';
+  if (suf) {
+    suffix = '...';
+  }
+  if (str.length <= num) {
+    return str
+  }
+  return str.slice(0, num) + suffix;
+}
 
 (async () => {
   /**
