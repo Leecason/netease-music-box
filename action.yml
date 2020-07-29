@@ -1,0 +1,9 @@
+name: "netease-music-box"
+author: "leecason"
+description: "更新网易云音乐的听歌排行数据到 Gist"
+branding:
+  icon: "headphones"
+  color: "red"
+runs:
+  using: "node12"
+  main: "dist/index.js"

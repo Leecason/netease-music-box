@@ -1,0 +1,23 @@
+{
+  "name": "netease-music-box",
+  "version": "1.0.0",
+  "description": "更新网易云音乐的听歌排行数据到 Gist",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc src/index.ts --outDir dist && ncc build dist/index.js --minify && find dist/ -type f -not -name 'index.js' -delete"
+  },
+  "author": "leecason",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^18.0.3",
+    "NeteaseCloudMusicApi": "^3.36.0",
+    "dotenv": "^8.2.0",
+    "eastasianwidth": "^0.2.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.3",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  }
+}
