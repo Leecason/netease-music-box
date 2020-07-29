@@ -1,5 +1,5 @@
 require('dotenv').config();
-const Octokit = require("@octokit/rest");
+const { Octokit } = require('@octokit/rest');
 const eaw = require('eastasianwidth');
 const { user_record } = require('NeteaseCloudMusicApi');
 
