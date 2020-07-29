@@ -2,11 +2,18 @@
   "name": "netease-music-box",
   "version": "1.0.0",
   "description": "更新网易云音乐的听歌排行数据到 Gist",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "ts-node src/index.ts",
-    "build": "tsc src/index.ts --outDir dist && ncc build dist/index.js --minify && find dist/ -type f -not -name 'index.js' -delete"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leecason/netease-music-box.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Leecason/netease-music-box/issues"
+  },
+  "homepage": "https://github.com/Leecason/netease-music-box#readme",
   "author": "leecason",
   "license": "MIT",
   "dependencies": {
