@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Leecason/netease-music-box/blob/master/preview.png" width="550">
+  <img src="https://github.com/Leecason/netease-music-box/blob/master/gist_preview.png" width="550">
   <h2 align="center">Netease Music Box</h2>
   <p align="center">更新最近一周网易云音乐的听歌排行数据到 Gist</p>
 </p>
