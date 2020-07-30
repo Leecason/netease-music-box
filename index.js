@@ -64,7 +64,7 @@ function truncateString(str, num, suf) {
 
     const line = [
       name.padEnd(26 + name.length - eaw.length(name)),
-      generateBarChart(playCount * 100 / totalPlayCount, 17),
+      generateBarChart(playCount * 100 / totalPlayCount, 10),
       `${playCount}`.padStart(5),
       'plays',
     ];
