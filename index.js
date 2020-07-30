@@ -1,6 +1,5 @@
 require('dotenv').config();
 const { Octokit } = require('@octokit/rest');
-const eaw = require('eastasianwidth');
 const { user_record } = require('NeteaseCloudMusicApi');
 
 const {
@@ -9,22 +8,6 @@ const {
   USER_ID: userId,
   USER_TOKEN: userToken,
 } = process.env;
-
-function generateBarChart (percent, size) {
-  const syms = '░▏▎▍▌▋▊▉█';
-
-  const frac = Math.floor((size * 8 * percent) / 100);
-  const barsFull = Math.floor(frac / 8);
-  if (barsFull >= size) {
-    return syms.substring(8, 9).repeat(size);
-  }
-  const semi = frac % 8;
-
-  return [
-    syms.substring(8, 9).repeat(barsFull),
-    syms.substring(semi, semi + 1),
-  ].join("").padEnd(size, syms.substring(0, 1));
-}
 
 function truncateString(str, num, suf) {
   let suffix = '';
@@ -58,14 +41,18 @@ function truncateString(str, num, suf) {
     totalPlayCount += data.playCount;
   });
 
-  const lines = weekData.slice(0, 5).reduce((prev, cur) => {
+  const icon = ['🥇', '🥈', '🥉', '🎨', '💫']
+
+  const lines = weekData.slice(0, 5).reduce((prev, cur, index) => {
     const playCount = cur.playCount;
-    let name = truncateString(cur.song.name, 25, true);
+    const artists = cur.song.ar.map(a => a.name);
+    let name = `${cur.song.name} - ${artists.join('/')}`;
 
     const line = [
-      name.padEnd(26 + name.length - eaw.length(name)),
-      generateBarChart(playCount * 100 / totalPlayCount, 10),
-      `${playCount}`.padStart(5),
+      icon[index].padEnd(2),
+      truncateString(name, 45, true),
+      ' · ',
+      `${playCount}`,
       'plays',
     ];
 
