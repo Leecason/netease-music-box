@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Leecason/netease-music-box/blob/master/gist_preview.png" width="550">
+  <img src="https://github.com/Leecason/netease-music-box/blob/master/assets/gist_preview.png" width="550">
   <h2 align="center">Netease Music Box</h2>
   <p align="center">更新最近一周网易云音乐的听歌排行数据到 Gist</p>
 </p>
@@ -16,9 +16,13 @@
 
     - ID 为个人主页页面（`https://music.163.com/#/user/home?id=xxx`），`id` 后紧跟的那串数字
 
+    ![USER_ID](https://github.com/Leecason/netease-music-box/blob/master/assets/user_id.png)
+
 4. 获取网易云音乐用户 Token
 
     - 在登录态下打开浏览器开发者工具，查看 Cookie，获取 `key` 为 `MUSIC_U` 的 `value`
+
+    ![USER_TOKEN](https://github.com/Leecason/netease-music-box/blob/master/assets/user_token.png)
 
 ### 🖥设置
 
