@@ -36,7 +36,7 @@
 
 3. 编辑 `.github/workflows/schedule.yml` 文件中的环境变量：
 
-    - **GIST_ID**: ID 是新建 Gist 的 `url` 后缀: https://gist.github.com/Leecason/**b51bc9844585c33775edc27bb38ad2ab**
+    - **GIST_ID**: ID 是新建 Gist 的 `url` 后缀: `https://gist.github.com/Leecason/`**`b51bc9844585c33775edc27bb38ad2ab`**
 
     - **USER_ID**: 网易云音乐用户 ID
 
