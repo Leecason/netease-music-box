@@ -9,17 +9,6 @@ const {
   USER_TOKEN: userToken,
 } = process.env;
 
-function truncateString(str, num, suf) {
-  let suffix = '';
-  if (suf) {
-    suffix = '...';
-  }
-  if (str.length <= num) {
-    return str
-  }
-  return str.slice(0, num) + suffix;
-}
-
 (async () => {
   /**
    * First, get user record
@@ -50,7 +39,7 @@ function truncateString(str, num, suf) {
 
     const line = [
       icon[index].padEnd(2),
-      truncateString(name, 45, true),
+      name,
       ' · ',
       `${playCount}`,
       'plays',
