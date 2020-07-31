@@ -1,7 +1,7 @@
 {
   "name": "netease-music-box",
   "version": "1.0.0",
-  "description": "更新网易云音乐的听歌排行数据到 Gist",
+  "description": "将你最近一周的网易云音乐的听歌记录更新到 Gist",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
