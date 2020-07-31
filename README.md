@@ -1,22 +1,22 @@
 <p align="center">
   <img src="https://github.com/Leecason/netease-music-box/blob/master/assets/gist_preview.png" width="550">
   <h2 align="center">Netease Music Box</h2>
-  <p align="center">更新最近一周网易云音乐的听歌排行数据到 Gist</p>
+  <p align="center">将你最近一周的网易云音乐的听歌记录更新到 Gist</p>
 </p>
 
 ---
 
 > 📌✨ 更多像这样的 Pinned Gist 项目请访问：https://github.com/matchai/awesome-pinned-gists
 
-## ✨使用
+## 🖥 使用
 
-### 🎒准备
+### 🎒 前置工作
 
-1. 创建一个新的 public Github Gist（https://gist.github.com/）
+1. 创建一个公开的 Github Gist（https://gist.github.com/）
 
 2. 创建一个 GitHub Token，需要勾选 `gist` 权限，复制生成的 Token（https://github.com/settings/tokens/new）
 
-3. 获取网易云音乐用户 ID
+3. 获取网易云音乐用户 ID（https://music.163.com/）
 
     - ID 为个人主页页面（`https://music.163.com/#/user/home?id=xxx`），`id` 后紧跟的那串数字
 
@@ -28,15 +28,15 @@
 
     ![USER_TOKEN](https://github.com/Leecason/netease-music-box/blob/master/assets/user_token.png)
 
-### 🖥设置
+### 🚀 安装
 
-1. Fork 这个项目
+1. Fork 这个仓库
 
-2. 进入你 Fork 的项目，启用 Github ACtions
+2. 进入 Fork 后的仓库，启用 Github Actions
 
 3. 编辑 `.github/workflows/schedule.yml` 文件中的环境变量：
 
-    - **GIST_ID**: 从新建的 Github Gist 的 `url` 上获取到的 Gist ID
+    - **GIST_ID**: ID 是新建 Gist 的 `url` 后缀: https://gist.github.com/Leecason/**b51bc9844585c33775edc27bb38ad2ab**
 
     - **USER_ID**: 网易云音乐用户 ID
 
@@ -45,3 +45,13 @@
 5. 将文件修改 push 到项目
 
 6. [在个人资料中嵌入 Gist](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/pinning-items-to-your-profile)
+
+## 🤔 工作原理
+
+- 基于 [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi) 获取听歌记录
+- 基于 Github API 更新 Gist
+- 使用 Github Actions 自动更新 Gist
+
+## 📄 开源协议
+
+本项目使用 [MIT](./LICENSE) 协议
